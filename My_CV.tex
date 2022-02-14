@@ -1,0 +1,126 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2021 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{orange}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+\setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
+\setlength{\hintscolumnwidth}{4cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math} 
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+\usepackage[russian]{babel}
+
+% personal data
+\name{Сергей}{\\Мирошниченко}
+\title{Резюме}                               % optional, remove / comment the line if not wanted
+\born{17 октября 1983}                                 % optional, remove / comment the line if not wanted
+\address{ул.Давиденко 14, кв. 60}{607190, Саров, Нижегородская область}{Россия}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+7~(920)~016~21~42}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{miroshnichnenkos\@mail.com}                               % optional, remove / comment the line if not wanted
+
+% Social icons
+%\social[linkedin]{sergey-malashenko}                        % optional, remove / comment the line if not wanted
+%\social[telegram]{sergey\_malashenko}                            % optional, remove / comment the line if not wanted
+\photo[70pt][0.4pt]{pictures/1644850280034.png}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Образование}
+\cventry{2001--2007}{}{Саровский Физико-Технический Институт (МИФИ)}{Прикладная математика и физика, квантовой электроники}{\textit{GPA -- 4.7}}{}  % Arguments not required can be left empty
+\cventry{2017--2019}{}{GeekBrains}{}{}{
+\begin{itemize}
+\item Java, уровень начальный
+\item Java, уровень продвинутый
+\item Java, уровень экспертный
+\end{itemize}
+}
+\cventry{2017--2017}{}{Stepik}{}{}{
+\begin{itemize}
+\item Python: основы и применение
+\item Программирование на Python
+\end{itemize}
+}
+
+\section{Опыт}
+\subsection{Профессиональный}
+
+\cventry{2021--Present}{Инженер-программист}{\textsc{РФЯЦ-ВНИИЭФ,ИЦТ}}{\url{http://www.vniief.ru}}{}{
+Разработка бэкэнд части микросервиса комплексной ERP системыв рамках технического задания. Локализация (руссификация) программного комплекса для снятия требуемых метрик с баз данных.
+}
+
+\cventry{2007--2021}{Научный сотрудник}{\textsc{РФЯЦ-ВНИИЭФ,ИЛФИ}}{\url{http://www.vniief.ru}}{}{
+Существующий комплекс программ расчета яркости неба в заданной точке модифицировал в соответствии с текущими требованиями, что позволило построить графики распределений по всему небу.
+\newline{}
+Исследование прозрачности атмосферы и возможности наблюдения слабоконтрастных объектов на фоне дневного неба. Удалось разработать методику наблюдения за искусственными спутниками Земли, целевые показатели были достигнуты.
+\newline{}
+Принимал участие в разработке и усовершенствовании адаптивных оптических систем. Разработал методику опорной желтой звезды. 
+}
+
+\cventry{2004--2007}{Репетитор по физике и математике, подготовка к ЕГЭ и вступительным олимпиадам в различные ВУЗы}{}{}{}{
+Под моим руководством абитуриенты абитуриенты успешно закончили школы и поступили в целевые ВУЗы (Москва, Нижний Новгород)
+}
+
+
+
+\section{Навыки}
+\cvitem{Математические навыки}{алгоритмическое мышление}
+\cvitem{Техническин навыки}{\textsc{Java SE}, \textsc{Java EE7}, \textsc{PostgreSQL}, \textsc{MyBatis}, \textsc{Apache TomCat}, \textsc{Maven}, \textsc{Git} }
+\cvitem{Языки программирования}{\textsc{Java}, \textsc{Python}, \textsc{Bash}}
+
+\section{Языки}
+\cvitemwithcomment{Русский}{родной}{}
+\cvitemwithcomment{Английский}{средний}{читаю профессиональную литературу}
+\end{document}
+
+
+%% end of file `template.tex'.
+
